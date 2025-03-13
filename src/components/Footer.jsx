@@ -1,7 +1,6 @@
-
 import Badge from "@mui/material/Badge";
 import { styled } from "@mui/material/styles";
-import IconButton from "@mui/material/IconButton";
+// import IconButton from "@mui/material/IconButton";
 import Box from "@mui/material/Box";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
@@ -10,11 +9,17 @@ import HomeIcon from "@mui/icons-material/Home";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { CartContext } from "../App";
 import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import ShoppingPage from "../pages/ShoppingPage";
 
 export default function Footer() {
   const [value, setValue] = useState(0);
-  const{cart,setCart}=useContext(CartContext)
+  const { cart, setCart } = useContext(CartContext);
+const shopnavigate=useNavigate()
 
+  function shoppingHandler(){
+    shopnavigate("/shopping")
+  }
 
   const StyledBadge = styled(Badge)(({ theme }) => ({
     "& .MuiBadge-badge": {
@@ -26,7 +31,7 @@ export default function Footer() {
   }));
   return (
     <>
-      <Box sx={{ width: "100%",position:"fixed", bottom:"0"}}>
+      <Box sx={{ width: "100%", position: "fixed", bottom: "0" }}>
         <BottomNavigation
           sx={{ backgroundColor: "#dec9e9" }}
           showLabels
@@ -41,13 +46,16 @@ export default function Footer() {
           <BottomNavigationAction
             icon={<FavoriteIcon fontSize="medium" sx={{ color: "#47126b" }} />}
           />
-          <BottomNavigationAction
-            icon={
-              <StyledBadge badgeContent={cart?.length||0} color="secondary">
-                <ShoppingCartIcon sx={{ color: "#47126b" }} />
-              </StyledBadge>
-            }
-          />
+         
+            <BottomNavigationAction
+            onClick={shoppingHandler}
+              icon={
+                <StyledBadge badgeContent={cart?.length || 0} color="secondary">
+                  <ShoppingCartIcon sx={{ color: "#47126b" }} />
+                </StyledBadge>
+              }
+            />
+         
         </BottomNavigation>
       </Box>
     </>

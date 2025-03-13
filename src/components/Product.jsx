@@ -54,12 +54,12 @@ export default function Product({ id, title, price, image }) {
   }
   return (
     <Card
-      sx={{ maxWidth: 250, border: "2px solid #47126b" }}
+      sx={{ border: "2px solid #47126b" ,marginTop:"10px",width:"250px"}}
       onClick={singleProductHandler}
     >
       <CardMedia
         component="img"
-        height="auto"
+        height="90px"
         image={image}
         sx={{ width: "90px", margin: "30px" }}
       />
@@ -71,7 +71,7 @@ export default function Product({ id, title, price, image }) {
           ${price}
         </Typography>
       </CardContent>
-      <CardActions className="mb-[20px]">
+      <CardActions>
         <Button
           size="small"
           sx={{
