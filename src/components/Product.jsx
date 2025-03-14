@@ -17,7 +17,7 @@ export default function Product({ id, title, price, image,buttons }) {
  
   return (
     <Card
-      sx={{ border: "2px solid #47126b" ,marginTop:"10px",width:"250px"}}
+      sx={{ border: "2px solid #47126b" ,marginTop:"10px",width:"198px"}}
       onClick={singleProductHandler}
     >
       <CardMedia

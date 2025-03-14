@@ -12,7 +12,7 @@ export default function Header() {
     <>
       <Box sx={{ flexGrow: 1 }}>
         <AppBar position="static">
-          <Toolbar className="bg-[#dec9e9]">
+          <Toolbar className="bg-[#dec9e9] w-full">
             <IconButton
               size="large"
               edge="start"

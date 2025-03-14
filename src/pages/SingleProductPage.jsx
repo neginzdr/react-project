@@ -53,7 +53,7 @@ export default function SingleProductPage() {
     });
   }
   return (
-    <div className="flex justify-center mt-[10px] mb-[20px]">
+    <div className="flex justify-center mt-[10px] mb-[20px] mr-[10px]">
     <Product
       key={singleCart.id}
       title={singleCart.title}
